@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "python-docx": "1.2.0",
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9"
+  },
+  "purpose": "当前核验环境，不能倒填为既有实验时未记录的精确包版本"
+}

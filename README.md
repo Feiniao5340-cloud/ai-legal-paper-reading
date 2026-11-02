@@ -1,20 +1,13 @@
-# AI法学文献两阶段阅读实践
+# AI读法学论文：把“观点来自谁”与“作者是否采用”分开
 
-以刘宏宇《我国自动驾驶汽车保险制度的立法审视与完善进路》为例：先用AI建立文章主线，再围绕实际疑点回查主体、义务、条件和位置，最后检查补充解释是否超出原文。
+用刘宏宇《我国自动驾驶汽车保险制度的立法审视与完善进路》的两个必要片段，演示如何从导读进入观点与依据核查。真实实践发现：增加观点标签没有明显改善本地对照；定点纠错能修复归属，也可能撤回原文已有内容。读者需要逐项保留已核实的信息。
 
-- [技术分享正文](docs/技术分享.md)
-- [单命令复现步骤](reproduction/复现步骤.md)
-- [随包原文片段](evidence/case-source.txt)
-- [已跑通的片段阅读结果](examples/self-contained/answer.md)
-- [片段案例核查](evidence/自包含案例核查.md)
-- [玻尔首问结果](examples/bohrium/首次回答-页面转录.md)、[实际追问结果](examples/bohrium/追问回答-页面转录.md)及[闭环核查](evidence/玻尔闭环核查.md)
-- [既有无Skill完整结果](examples/without-skill/answer-original.txt)、[有Skill完整结果](examples/with-skill/answer-original.txt)及[源文核查](evidence/核查记录.md)
-- [冻结Skill](skill/SKILL.md)与[来源贡献](ATTRIBUTION.md)
+1. [技术分享正文](docs/技术分享.md)：具体问题、方法、消融观察、玻尔修复与可迁移经验。
+2. [一步步复现](reproduction/复现步骤.md)：两个随包案例、模型入口及无需模型的原文核字。
+3. [完整对照与人工核查](evidence/本轮对照核查.md)：四份真实结果，无明显增益也保留。
+4. [玻尔闭环核查](evidence/玻尔复核与最终阅读结论.md)：完整真实回答、修复与剩余错误，附原文依据。
+5. [来源与贡献](ATTRIBUTION.md)、[版本历史与范围](HISTORY.md)。
 
-```text
-python -X utf8 reproduction/run_case.py --source evidence/case-source.txt --out ../reading-run --codex codex --model gpt-6-luna --reasoning max
-```
+从仓库根目录执行 `python -X utf8 reproduction/run_case.py --case A --variant baseline --out ../reading-A --prepare-only`，可先离线检查实际输入。真实阅读需Codex CLI、可用模型权限和网络；详见复现说明。
 
-材料自包含，读者无需另下载整篇论文即可完成片段练习；模型调用仍需自己的账号、权限和网络。默认由本地脚本准备文字，模型直接阅读，不需要模型执行命令。
-
-三类证据分别解释：旧全文两臂是单组非盲事后观察；玻尔追问是读者提供方向后的修复；新增片段入口是真实运行验证，不是全文对照或稳定增益证明。原始失败与输出保留，论文全文不公开，法规未另行联网核实。历史Skill93.75分与技术分享首版84分均不能当本版成绩。
+本仓库仅公开必要片段，不提供论文全文。关键证据随包，不依赖登录查看会话。

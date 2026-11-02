@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "exit_code": 0,
+  "elapsed_seconds": 43.969,
+  "source_sha256": "7b4cd206936c5e2aef7543fee9d295a2650bc7f7d278c64ddd3c4c462876422e",
+  "model_requested": "gpt-6-luna",
+  "reasoning_requested": "max",
+  "native_events_sha256": "b83617679f0438091b83c4eb7d769c4426de6ee3fc7709197ac19348bc8c6492",
+  "errors": [
+    {
+      "type": "error",
+      "message": "Reconnecting... 2/5 (stream disconnected before completion: IO error: peer closed connection without sending TLS close_notify: https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof)"
+    }
+  ],
+  "answer_created": false,
+  "failure": "Model tool execution was rejected by policy; no source read and no answer.md. An exit code of zero was not treated as successful reading."
+}

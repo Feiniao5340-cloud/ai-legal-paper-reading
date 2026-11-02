@@ -1,16 +1,8 @@
-[
-  {
-    "arm": "without-skill",
-    "raw_original_sha256": "58f122007d8d30c298234d60049721a05f952d0053f66a682296595cfe9ebdeb",
-    "raw_copy_sha256": "58f122007d8d30c298234d60049721a05f952d0053f66a682296595cfe9ebdeb",
-    "presentation_pdf_links_replaced": 17,
-    "model_text_edited": false
-  },
-  {
-    "arm": "with-skill",
-    "raw_original_sha256": "485ac67ea24c3aae688d498b2ecf0fb77ff5b8a65704a437d5c0e2ab934a63af",
-    "raw_copy_sha256": "485ac67ea24c3aae688d498b2ecf0fb77ff5b8a65704a437d5c0e2ab934a63af",
-    "presentation_pdf_links_replaced": 1,
-    "model_text_edited": false
+{
+  "historical_v1": "84分版包含修改原PDF链接的展示副本；未修改模型文字",
+  "v2": "去除两份重复展示副本，只保留逐字节原始answer-original.txt；历史PDF路径不作为仓库有效链接",
+  "raw_sha256": {
+    "without-skill": "58f122007d8d30c298234d60049721a05f952d0053f66a682296595cfe9ebdeb",
+    "with-skill": "485ac67ea24c3aae688d498b2ecf0fb77ff5b8a65704a437d5c0e2ab934a63af"
   }
-]
+}

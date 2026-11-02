@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "prepared_at_utc": "2026-11-01T16:06:47.795634+00:00",
+  "source_sha256": "7b4cd206936c5e2aef7543fee9d295a2650bc7f7d278c64ddd3c4c462876422e",
+  "model_requested": "gpt-6-luna",
+  "reasoning_requested": "max",
+  "prepare_only": false,
+  "delivery": "inline",
+  "scope": "new directory and instructions; not OS isolation",
+  "credential_files_copied": false,
+  "monetary_cost": "not exposed",
+  "model_backend_version": "not exposed",
+  "cli_version": "codex-cli 0.166.0-alpha.5.1",
+  "started_at_utc": "2026-11-01T16:06:47.875155+00:00",
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-01T16:07:24.566135+00:00",
+  "elapsed_seconds": 36.688,
+  "input_hashes_unchanged": true,
+  "errors": [
+    {
+      "type": "error",
+      "message": "Reconnecting... 2/5 (stream disconnected before completion: IO error: peer closed connection without sending TLS close_notify: https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof)"
+    }
+  ],
+  "usage": {
+    "input_tokens": 14367,
+    "cached_input_tokens": 14208,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2243,
+    "reasoning_output_tokens": 1552
+  },
+  "native_events_sha256": "bc352bc8e27341d6b2742de2ace9918974a18f4611ef9b2bb54dc87215e35ba0",
+  "input_hashes": {
+    "prompt.md": "85c7bad4aa112ef0f2228bedf0ea8d81d71489fc76e3308b0d8eacf2767ceee8",
+    "materials/source.txt": "7b4cd206936c5e2aef7543fee9d295a2650bc7f7d278c64ddd3c4c462876422e",
+    "skill/SKILL.md": "49ccff2eb9a773689140685b8cbd82740feacfb606860f9e2a8e5979aa897f17"
+  },
+  "model_tool_commands": [],
+  "record_scope": "summary of actual run; full native events retained locally, not invented or relabelled"
+}

@@ -1,19 +1,20 @@
-# 用 AI 读懂法学论文中的制度选择与论证
+# AI法学文献两阶段阅读实践
 
-以刘宏宇《我国自动驾驶汽车保险制度的立法审视与完善进路》为例，展示一个提示词与文档工具配合的阅读工作流。
-
-本案例关注：怎样帮助读者理解作者为何将责任认定、保险制度和数据治理结合起来，并保留制度建议的具体内容、理由与条件。两份真实输出均已完成；本次整理复用既有实践，没有重新运行模型。
+以刘宏宇《我国自动驾驶汽车保险制度的立法审视与完善进路》为例：先用AI建立文章主线，再围绕实际疑点回查主体、义务、条件和位置，最后检查补充解释是否超出原文。
 
 - [技术分享正文](docs/技术分享.md)
-- [原文核查与证据对应](evidence/核查记录.md)
-- [完整无 Skill 结果](examples/without-skill/answer.md)
-- [完整有 Skill 结果](examples/with-skill/answer.md)
-- [复现步骤](reproduction/复现步骤.md)
-- [实际 Skill](skill/SKILL.md)
-- [来源与贡献](ATTRIBUTION.md)
-- [玻尔首次实际结果](examples/bohrium/首次回答-页面转录.md)
-- [玻尔结果核查](evidence/玻尔首次结果核查.md)
+- [单命令复现步骤](reproduction/复现步骤.md)
+- [随包原文片段](evidence/case-source.txt)
+- [已跑通的片段阅读结果](examples/self-contained/answer.md)
+- [片段案例核查](evidence/自包含案例核查.md)
+- [玻尔首问结果](examples/bohrium/首次回答-页面转录.md)、[实际追问结果](examples/bohrium/追问回答-页面转录.md)及[闭环核查](evidence/玻尔闭环核查.md)
+- [既有无Skill完整结果](examples/without-skill/answer-original.txt)、[有Skill完整结果](examples/with-skill/answer-original.txt)及[源文核查](evidence/核查记录.md)
+- [冻结Skill](skill/SKILL.md)与[来源贡献](ATTRIBUTION.md)
 
-本案例包括一组既有本地阅读对照和一次玻尔界面适配实践。探索性复核观察到，Skill结果对具体分级责任与交强险选择理由解释更充分，也避免了一处附件范围过度排除；两份仍共同遗漏部分分级数据义务。玻尔结果能给出主线，但仍需回查具体方案及页码，后续追问仅作为未验证建议。
+```text
+python -X utf8 reproduction/run_case.py --source evidence/case-source.txt --out ../reading-run --codex codex --model gpt-6-luna --reasoning max
+```
 
-本文的20/24与23/24是单组、非盲事后内部评分，不是本场官方成绩，也不证明稳定增益。原始结果字节和展示副本分别保存，转换记录说明仅调整原件链接。论文全文不在公开材料中，必要原文片段及来源随文提供；正文涉及法规未另行联网核实。Skill既有93.75分属于另一场比赛的完整作品，不是本案例准确率或本场得分。
+材料自包含，读者无需另下载整篇论文即可完成片段练习；模型调用仍需自己的账号、权限和网络。默认由本地脚本准备文字，模型直接阅读，不需要模型执行命令。
+
+三类证据分别解释：旧全文两臂是单组非盲事后观察；玻尔追问是读者提供方向后的修复；新增片段入口是真实运行验证，不是全文对照或稳定增益证明。原始失败与输出保留，论文全文不公开，法规未另行联网核实。历史Skill93.75分与技术分享首版84分均不能当本版成绩。
